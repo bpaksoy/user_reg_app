@@ -1,0 +1,17 @@
+<ul>
+  <li><a href="/users">All Users</a></li>
+  <li><a href="/todos">All Todos</a></li>
+</ul>
+
+<h1>Welcome, <%= user.username%>!</h1>
+<form  action="/users/<%= user.id%>/todos" method="POST">
+  <input type="text" name="task" placeholder="task">
+  <input type="submit" name="submit" value="Submit">
+</form>
+
+<h2>To Dos</h2>
+<ul>
+  <% for (var i = 0; i <todos.length; i++){ %>
+   <li><%= todos[i].task%></li>
+    <% } %>
+</ul>
